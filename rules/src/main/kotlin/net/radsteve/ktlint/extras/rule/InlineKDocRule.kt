@@ -76,7 +76,7 @@ public class InlineKDocRule : ExtraRule("inline-kdoc") {
 
     // And append a space onto the end of the doc comment.
     val leaf = sectionChild as LeafPsiElement
-    val newLeaf = LeafPsiElement(leaf.elementType, section.firstChildNode.text + " ")
-    section.firstChildNode.replaceWith(newLeaf)
+    val newLeaf = LeafPsiElement(leaf.elementType, section.lastChildNode.text + " ")
+    section.lastChildNode.replaceWith(newLeaf)
   }
 }

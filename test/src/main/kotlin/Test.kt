@@ -2,7 +2,7 @@ private fun someHigherOrderFunction(block: (Unit) -> Unit) {}
 
 private fun testImplicitIt() {
   someHigherOrderFunction { it -> println(it) }
-  // someHigherOrderFunction { println(it) } // Only this should fail.
+  someHigherOrderFunction { println(it) } // Only this should fail.
   someHigherOrderFunction { unit -> println(unit) }
   someHigherOrderFunction(::println)
 }

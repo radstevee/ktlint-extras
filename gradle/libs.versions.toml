@@ -1,0 +1,17 @@
+[versions]
+kotlin = "2.1.20"
+ktlint = "1.5.0"
+ktlint-gradle = "12.2.0"
+
+[libraries]
+ktlint-rule-engine = { module = "com.pinterest.ktlint:ktlint-rule-engine", version.ref = "ktlint" }
+ktlint-rule-engine-core = { module = "com.pinterest.ktlint:ktlint-rule-engine-core", version.ref = "ktlint" }
+ktlint-rule-cli = { module = "com.pinterest.ktlint:ktlint-cli", version.ref = "ktlint" }
+ktlint-rule-cli-ruleset-core = { module = "com.pinterest.ktlint:ktlint-cli-ruleset-core", version.ref = "ktlint" }
+
+[bundles]
+ktlint = ["ktlint-rule-engine", "ktlint-rule-engine-core", "ktlint-rule-cli", "ktlint-rule-cli-ruleset-core"]
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint-gradle" }

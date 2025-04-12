@@ -1,0 +1,3 @@
+dependencies {
+  ktlintRuleset(project(":rules"))
+}

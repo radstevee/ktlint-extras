@@ -14,3 +14,5 @@ private val thing = Unit
  * Some KDoc - This should fail.
  */
 private val otherThing = Unit
+
+private interface IThing

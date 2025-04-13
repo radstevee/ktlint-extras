@@ -31,6 +31,13 @@ public class InlineKDocRule : ExtraRule("inline-kdoc") {
       return
     }
 
+    val section = sections.first()
+
+    // Apparently these count as one section so we skip if there's more lines.
+    if (section.text.lines().size > 1) {
+      return
+    }
+
     var isInline = true
 
     children.forEachIndexed { idx, child ->
@@ -64,7 +71,6 @@ public class InlineKDocRule : ExtraRule("inline-kdoc") {
         whitespace.psi.delete()
       }
 
-    val section = sections.first()
     val sectionChild = section.firstChildNode
 
     // Then we remove the one leading trailing asterisk from the second line.

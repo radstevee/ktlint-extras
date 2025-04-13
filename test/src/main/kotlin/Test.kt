@@ -5,6 +5,8 @@ private fun testImplicitIt() {
   someHigherOrderFunction { println(it) } // Only this should fail.
   someHigherOrderFunction { unit -> println(unit) }
   someHigherOrderFunction(::println)
+  someHigherOrderFunction { unit ->  }
+  someH
 }
 
 /** Some KDoc - This should pass. */
